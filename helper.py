@@ -25,6 +25,6 @@ def ask_for_numbers():
             return response
 
 
-def read_content(filename='words.txt'):
+def read_content(filename='ngrams10k.txt'):
     with open(filename, 'r') as f:
         return f.read().strip().replace(',', ' ')
