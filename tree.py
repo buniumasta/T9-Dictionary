@@ -16,6 +16,17 @@
 #                    lookup[key] = set()
 #                lookup[key].add(word)
 
+keymap = {
+    '2': 'abc',
+    '3': 'def',
+    '4': 'ghi',
+    '5': 'jkl',
+    '6': 'mno',
+    '7': 'pqrs',
+    '8': 'tuv',
+    '9': 'wxyz',
+}
+
 def add_word(word,complete_word,value,tree):
     #print("word: {} co: {}".format(word,complete_word))
     if len(word) > 1:
@@ -37,6 +48,7 @@ def build_tree(words):
     print(tree)
     return tree
 
+def prediction(tree,numbers):
 
 
 words={
