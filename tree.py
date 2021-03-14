@@ -51,13 +51,19 @@ def build_tree(words):
 def prediction(tree,numbers):
     pass
 
-def search_leaves(tree):
+def search_leaves(tree,results):
     for key,branch in tree.items():
-        print("branch:{}, typ:{} {}".format(key,type(branch),branch))
+        print("Key:{}, typ_branch:{} {}".format(key,type(branch),branch))
+        if key[0]== '$':
+            print("Appending to results: {} {}".format(key[1:],branch))
+            results.append([key[1:],branch])
+
         if type(branch) == type({}):
-            search_leaves(branch)
+            search_leaves(branch,results)
+    return results
 
-
+def take_second(elem):
+    return elem[1]
 
 
 
@@ -66,13 +72,20 @@ words={
   'band': 5,
   'bar': 14,
   'can': 32,
-  'candy': 7
+  'candy': 7,
+  'dark' : 18,
+  'dream': 7,
+  'darker' : 15,
+  'dreams' : 178
 }
+
 print(words)
 print("_______________")
 tree=build_tree(words)
 
 print("Learning to climb trees.... ")
-search_leaves(tree)
-
+results=search_leaves(tree,[])
+print(results)
+results.sort(key=take_second,reverse=True)
+print(results)
 #drzewo=myTree()
