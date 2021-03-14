@@ -49,6 +49,16 @@ def build_tree(words):
     return tree
 
 def prediction(tree,numbers):
+    pass
+
+def search_leaves(tree):
+    for key,branch in tree.items():
+        print("branch:{}, typ:{} {}".format(key,type(branch),branch))
+        if type(branch) == type({}):
+            search_leaves(branch)
+
+
+
 
 
 words={
@@ -60,6 +70,9 @@ words={
 }
 print(words)
 print("_______________")
-build_tree(words)
+tree=build_tree(words)
+
+print("Learning to climb trees.... ")
+search_leaves(tree)
 
 #drzewo=myTree()
