@@ -2,6 +2,8 @@
 
 ***"A long, long time ago, before the touchscreen keyboards of modern phones, primitive beings called humans typed words on their flip phones using numeric keypads. "How does this work?" you wonder. "Numbers aren't letters!" Indeed, they are not; however, each numeric key was marked with a collection of letters it could represent."***
 
+
+
 ![Alt text](/img/nokia.png?raw=true "Nokia")
 
 
@@ -22,10 +24,10 @@ keymap = {
 }
 ```
 
-## Sequence without T9:
-when the user edited SMS without T-9 and inserted the sequence: '226' it resulted in 'bm'. Hitting more than one the same key gave the option to go via a sequence of letters assigned to the key. So twice hit key '2' gave "a->b", so letter b was inserted into SMS, one hit '6' gave 'm' so the final word 'bm'm.
+### Sequence without T9:
+when the user edited SMS without T-9 and inserted the sequence: '226' it resulted in 'bm'. Hitting more than one the same key gave the option to go via a sequence of letters assigned to the key. So twice hit key '2' gave "a->b", so letter b was inserted into SMS, one hit '6' gave 'm' so the final word insterted in sms was: 'bm'.
 
-## Sequence with T9:
+### Sequence with T9:
 However, when the user edited SMS with T-9 and inserted the sequence '226', the dictionary was looking at all matching words in the background and presented the proposal of the most common words fitted into the key. Double hitting the same key did not anymore offer key sequence but contributed with one more letter in searching.
 '226' could result in the following suggestions:
 * 'can'
