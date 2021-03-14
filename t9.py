@@ -107,19 +107,16 @@ if __name__ == '__main__':
     # Recursive structure & recurcive method used
     tree = make_tree(words)
 
-    predictions = prediction(tree, "222")
-    print(predictions)
-    while True:
+#    predictions = prediction(tree, "223")
+#    print(predictions)
+
+    i=0
+    while i<100:
         # PART 3: Predict words that could follow
         numbers = helper.ask_for_numbers()
-        predictions = predict(tree, numbers)
+        predictions = prediction(tree, numbers)
+        print(predictions)
 
-        if not predictions:
-            print('No words were found that match those numbers. :(')
-        else:
-            for prediction, frequency in predictions[:10]:
-                print(prediction, frequency)
-        response = input('Want to go again? [y/N] ')
-        again = response and response[0] in ('y', 'Y')
-        if not again:
+        response = input('Want to go again? [y/N] ').strip()
+        if response not in ('y', 'Y'):
             break
