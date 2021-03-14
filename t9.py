@@ -3,6 +3,7 @@ import helper
 #Parsing Data
 
 def parse_content(content):
+    """ Fucntion returns dictionary of pairs: work/frequency"""
     lines=content.splitlines()
     my_lista=[]
     dictionary={}
@@ -12,9 +13,10 @@ def parse_content(content):
         dictionary[my_lista[0]]=int(my_lista[1])
     return dictionary
 
-#Building Search dictionary - recusrive method used
+#Building Search dictionary - recusrive method is used
 
 def add_word(word,complete_word,value,tree):
+    """ Function adds word into the tree """
     #print("word: {} co: {}".format(word,complete_word))
     if len(word) > 1:
         if word[0] in tree:
@@ -29,6 +31,7 @@ def add_word(word,complete_word,value,tree):
 
 
 def make_tree(words):
+    """ functions goes through collections of words and add it into the tree """
     tree={}
     for word,value in words.items():
         my_tree=add_word(word,'',value,tree)
@@ -37,6 +40,7 @@ def make_tree(words):
 
 # Prediction #####################################################################################################
 def search_leaves(tree,results):
+    "Search for all Leaves in the tree, and adds them into results."
     for key,branch in tree.items():
         #print("Key:{}, typ_branch:{} {}".format(key,type(branch),branch))
         if key[0]== '$':
@@ -52,6 +56,7 @@ def take_second(elem):
     return elem[1]
 
 def search_branch(word,tree,results):
+    """Function chooses the best tree branch which match the word """
     #print("word: {} co: {}".format(word,complete_word))
     if len(word) > 0:
         if word[0] in tree.keys():
@@ -65,6 +70,7 @@ def search_branch(word,tree,results):
 
 
 def search_by_number(numbers,search_word,tree,results):
+    """Function build all possible words based on sequence of numbers and then run search """
     #print("numbers: {} search_word: {}".format(numbers,search_word))
     if len(numbers) > 0:
         my_digit=numbers[0]
@@ -78,6 +84,7 @@ def search_by_number(numbers,search_word,tree,results):
 
 
 def prediction(tree, numbers):
+    """Function finds all words and sorts them with according to the best fit"""
     results=[]
     match_string=[]
 
