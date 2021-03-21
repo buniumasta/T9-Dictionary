@@ -40,6 +40,6 @@ List of words could be long for better users experience words were suggested bas
 ### File Sources
 The program uses frequencies of words gathered by google in dataset:[NGram](https://storage.googleapis.com/books/ngrams/books/datasetsv3.html) project, released under CC BY 3.0.
 
-Algorithm:
+### Algorithm:
 * Recursive dictionary data structure is used for fast search
 * Recursive search functions are implemented for data search
